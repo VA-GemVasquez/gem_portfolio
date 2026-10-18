@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="black">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rogem Collado">
+    <meta name="description" content="Projects and coursework by Rogem Collado, IT Student and Aspiring Web Developer.">
+    <title>Projects | Rogem Collado</title>
+    <!-- Prevent theme flash -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('rocol-portfolio-theme') || 'black';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="site-logo">Rogem Collado</a>
+
+            <div class="nav-actions-group">
+                <nav class="main-nav" aria-label="Main Navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html" aria-current="page">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Features Button: Sun / Moon Pill Toggle -->
+                <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Switch to White mode" title="Switch to White mode">
+                    <span class="theme-toggle-icon" title="White mode" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4.5"></circle>
+                            <line x1="12" y1="2" x2="12" y2="4.5"></line>
+                            <line x1="12" y1="19.5" x2="12" y2="22"></line>
+                            <line x1="4.22" y1="4.22" x2="5.93" y2="5.93"></line>
+                            <line x1="18.07" y1="18.07" x2="19.78" y2="19.78"></line>
+                            <line x1="2" y1="12" x2="4.5" y2="12"></line>
+                            <line x1="19.5" y1="12" x2="22" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.93" y2="18.07"></line>
+                            <line x1="18.07" y1="5.93" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </span>
+                    <span class="theme-toggle-icon is-active" title="Black mode" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" stroke="currentColor"></path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+
+        <!-- ===== OVERVIEW ===== -->
+        <section id="overview" class="card">
+            <span class="eyebrow">Work &amp; Coursework</span>
+            <h1>My Projects</h1>
+            <p>
+                A collection of projects and coding labs I've built while studying
+                Information Technology. Each milestone represents hands-on experience
+                with new web standards, problem-solving, and building practical interfaces.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- ===== TABLE with colspan + rowspan ===== -->
+        <section id="project-table">
+            <span class="eyebrow">Summary Table</span>
+            <h2>Project Overview &amp; Status</h2>
+
+            <div class="table-container">
+                <table>
+                    <caption>Coursework and practice projects at a glance</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Project</th>
+                            <th scope="col">Tech Stack</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Link / Preview</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Personal Portfolio (Phase 1)</th>
+                            <td>Semantic HTML5</td>
+                            <td><span class="badge badge-complete">Complete</span></td>
+                            <td><a href="index.html">View Page &rarr;</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Interactive Contact &amp; Inquiry Form</th>
+                            <td>HTML5 Forms &amp; Inputs</td>
+                            <td><span class="badge badge-complete">Complete</span></td>
+                            <td><a href="contact.html">View Form &rarr;</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Student Portal Profile Wireframe</th>
+                            <td>HTML5 Markup</td>
+                            <td><span class="badge badge-complete">Complete</span></td>
+                            <td><a href="#">Archived</a></td>
+                        </tr>
+                        <!-- rowspan example -->
+                        <tr>
+                            <th scope="row" rowspan="2">Upcoming Phase 2 &amp; 3</th>
+                            <td>CSS3 Responsive Layout &amp; Theme Switcher</td>
+                            <td><span class="badge">In Progress</span></td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript Interactive Quiz &amp; Task Tracker</td>
+                            <td><span class="badge">Planned</span></td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <!-- colspan example -->
+                        <tr>
+                            <td colspan="4">
+                                <em>Note: New projects and live demos are added as we advance through our coursework modules.</em>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ===== FIGURE with figcaption ===== -->
+        <section id="featured">
+            <span class="eyebrow">Spotlight</span>
+            <h2>Featured Milestone: Phase 1 Portfolio</h2>
+
+            <figure class="card">
+                <img src="assets/images/project-2.jpg" alt="Preview screenshot of the multi-page semantic HTML portfolio structure" width="900" height="480">
+                <figcaption>
+                    <strong>Personal Portfolio (Phase 1)</strong> &mdash; Built entirely with pure semantic HTML5
+                    without external frameworks or CSS stylesheets, focusing strictly on accessible structure,
+                    document hierarchy, and standard compliance.
+                </figcaption>
+            </figure>
+
+            <div class="card">
+                <h3>Key Steps in Developing This Milestone:</h3>
+                <ol class="roadmap-list">
+                    <li>Mapped out site architecture and page navigation requirements</li>
+                    <li>Structured semantic documents adhering to HTML5 standards</li>
+                    <li>Implemented advanced elements: definition lists, accessible tables, and forms</li>
+                    <li>Configured media elements with appropriate fallback content</li>
+                    <li>Validated code for semantic correctness, SEO metadata, and screen reader compatibility</li>
+                </ol>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ===== IFRAME ===== -->
+        <section id="embed">
+            <span class="eyebrow">Media Demonstration</span>
+            <h2>Embedded Video Demo</h2>
+            <p>Demonstrating media integration via responsive iframe embedding:</p>
+
+            <div class="media-card">
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="Demonstration Video" loading="lazy" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ===== EXTERNAL LINKS ===== -->
+        <section id="links">
+            <span class="eyebrow">Resources &amp; Profiles</span>
+            <h2>Helpful Links &amp; Profiles</h2>
+            <div class="card">
+                <ul class="clean-list">
+                    <li><a href="https://github.com/" target="_blank" rel="noopener">My GitHub Profile</a> &mdash; Repository tracking and code commits</li>
+                    <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a> &mdash; The documentation I rely on daily for web standards</li>
+                    <li><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank" rel="noopener">W3C Web Accessibility Initiative</a> &mdash; Guidelines for accessible web design</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; 2026 Rogem Collado &middot; <a href="contact.html">Get in touch</a></p>
+            <p><a href="#main-content">Back to Top &uarr;</a></p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/ai-chat.js"></script>
+</body>
+
+</html>

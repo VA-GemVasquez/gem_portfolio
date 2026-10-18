@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="black">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rogem Collado">
+    <meta name="description" content="Contact Rogem Collado, IT student and web developer from the Philippines.">
+    <title>Contact | Rogem Collado</title>
+    <!-- Prevent theme flash -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('rocol-portfolio-theme') || 'black';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="site-logo">Rogem Collado</a>
+
+            <div class="nav-actions-group">
+                <nav class="main-nav" aria-label="Main Navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html" aria-current="page">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Features Button: Sun / Moon Pill Toggle -->
+                <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Switch to White mode" title="Switch to White mode">
+                    <span class="theme-toggle-icon" title="White mode" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4.5"></circle>
+                            <line x1="12" y1="2" x2="12" y2="4.5"></line>
+                            <line x1="12" y1="19.5" x2="12" y2="22"></line>
+                            <line x1="4.22" y1="4.22" x2="5.93" y2="5.93"></line>
+                            <line x1="18.07" y1="18.07" x2="19.78" y2="19.78"></line>
+                            <line x1="2" y1="12" x2="4.5" y2="12"></line>
+                            <line x1="19.5" y1="12" x2="22" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.93" y2="18.07"></line>
+                            <line x1="18.07" y1="5.93" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </span>
+                    <span class="theme-toggle-icon is-active" title="Black mode" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" stroke="currentColor"></path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+
+        <!-- ===== INTRO ===== -->
+        <section id="contact-intro" class="card">
+            <span class="eyebrow">Communication</span>
+            <h1>Contact Me</h1>
+
+            <p>
+                Have feedback on my portfolio, a question about my coursework,
+                or an internship opportunity to discuss? Please feel free to send a message
+                using the form below. Required fields are marked with <span><strong>*</strong></span>.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- ===== FORM ===== -->
+        <section id="form">
+            <span class="eyebrow">Direct Message</span>
+            <h2>Send a Message</h2>
+
+            <div class="form-wrapper">
+                <form action="#" method="post">
+
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Juan Dela Cruz" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="you@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select a topic...</option>
+                            <option value="feedback">Portfolio Feedback</option>
+                            <option value="collaboration">Project Collaboration</option>
+                            <option value="opportunity">Internship / Opportunity</option>
+                            <option value="general">General Question</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="6" cols="45" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                        <label for="newsletter">Keep me updated on future project releases</label>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ===== AUDIO ===== -->
+        <section id="audio">
+            <span class="eyebrow">Media Sample</span>
+            <h2>Audio Introduction</h2>
+            <p>A short voice greeting and introduction to this project:</p>
+
+            <div class="media-card">
+                <audio controls>
+                    <source src="assets/audio/intro.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ===== VIDEO ===== -->
+        <section id="video">
+            <span class="eyebrow">Media Sample</span>
+            <h2>Video Walkthrough</h2>
+            <p>A brief demonstration video showcasing project navigation and layout:</p>
+
+            <div class="media-card">
+                <video controls width="640">
+                    <source src="assets/video/demo.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ===== OTHER ===== -->
+        <section id="other">
+            <span class="eyebrow">Connect</span>
+            <h2>Other Ways to Reach Me</h2>
+            <div class="card">
+                <ul class="clean-list">
+                    <li><strong>Email:</strong> <a href="mailto:rogemcollado.dev@gmail.com">rogemcollado.dev@gmail.com</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/rogemcollado" target="_blank" rel="noopener">github.com/rogemcollado</a></li>
+                    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/rogemcollado" target="_blank" rel="noopener">linkedin.com/in/rogemcollado</a></li>
+                    <li><strong>Location:</strong> Philippines</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; 2026 Rogem Collado &middot; Minimalist Black &amp; White Edition</p>
+            <p><a href="#main-content">Back to Top &uarr;</a></p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/ai-chat.js"></script>
+</body>
+
+</html>

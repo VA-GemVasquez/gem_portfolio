@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="black">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rogem Collado">
+    <meta name="description" content="Rogem Collado — IT Student & Aspiring Full-Stack Developer Portfolio">
+    <title>Rogem Collado | Portfolio</title>
+    <!-- Prevent theme flash & register JS support -->
+    <script>
+        (function () {
+            document.documentElement.classList.add('js');
+            try {
+                var t = localStorage.getItem('rocol-portfolio-theme') || 'black';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) { }
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css?v=9">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+</head>
+
+<body>
+
+    <!-- ===== READING PROGRESS BAR ===== -->
+    <div id="reading-progress" class="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="reading-progress-fill" id="reading-progress-fill" aria-hidden="true"></div>
+    </div>
+
+    <!-- ===== CONSTELLATION CANVAS BACKGROUND ===== -->
+    <canvas id="constellation-canvas" class="constellation-bg" aria-hidden="true"></canvas>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#home" class="site-logo">Rogem Collado</a>
+
+            <div class="nav-actions-group">
+                <nav class="main-nav" aria-label="Main Navigation">
+                    <ul>
+                        <li><a href="#home" class="nav-link" aria-current="page">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Features Button: Sun / Moon Pill Toggle -->
+                <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Switch to White mode"
+                    title="Switch to White mode">
+                    <span class="theme-toggle-icon" title="White mode" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4.5"></circle>
+                            <line x1="12" y1="2" x2="12" y2="4.5"></line>
+                            <line x1="12" y1="19.5" x2="12" y2="22"></line>
+                            <line x1="4.22" y1="4.22" x2="5.93" y2="5.93"></line>
+                            <line x1="18.07" y1="18.07" x2="19.78" y2="19.78"></line>
+                            <line x1="2" y1="12" x2="4.5" y2="12"></line>
+                            <line x1="19.5" y1="12" x2="22" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.93" y2="18.07"></line>
+                            <line x1="18.07" y1="5.93" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </span>
+                    <span class="theme-toggle-icon is-active" title="Black mode" aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"
+                                stroke="currentColor"></path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <article id="main-article" class="main-article">
+
+        <!-- ===================================================================
+             1. HOME SECTION (HERO with FLOATING PRODUCT MOCKUP & PARALLAX)
+             =================================================================== -->
+        <section id="home" class="hero-section">
+            <div class="hero-layout">
+                <!-- Column 1: Introduction & Information -->
+                <div class="hero-content reveal">
+                    <div class="hero-eyebrow-row">
+                        <img src="assets/images/profile.png" alt="Rogem Collado avatar" class="hero-mini-avatar" width="38" height="38">
+                        <div class="hero-status-pill">
+                            <span class="status-pulse-dot" aria-hidden="true"></span>
+                            <span>Available for Internships &amp; Projects</span>
+                        </div>
+                    </div>
+
+                    <h1 class="hero-title">Rogem Collado</h1>
+                    <h2 class="subheading-lead">IT Student &amp; Aspiring Full-Stack Developer</h2>
+
+                    <p class="hero-lead-text">
+                        Hello! I'm <strong>Rogem Collado</strong>, an Information Technology student
+                        from the Philippines passionate about crafting clean, responsive, and accessible
+                        web applications with modern standards and thoughtful interaction design.
+                    </p>
+
+                    <p>
+                        Welcome to my single-page portfolio! You can explore my <a href="#about">background &amp; skills</a>,
+                        inspect my <a href="#projects">projects &amp; milestones</a>, or
+                        <a href="#contact">get in touch</a> below.
+                    </p>
+
+                    <div class="btn-group">
+                        <a href="#projects" class="btn btn-primary">Browse Projects &darr;</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/" target="_blank" rel="noopener" class="social-link-pill">
+                            <span>GitHub &rarr;</span>
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-link-pill">
+                            <span>LinkedIn &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Floating Product Mockup Stage -->
+                <div class="hero-mockup-column reveal" id="hero-mockup-stage">
+                    <div class="mockup-parallax-wrapper" id="mockup-parallax-wrapper">
+                        <!-- Floating Rounded Device Frame with Hairline Border & Layered Shadow -->
+                        <div class="mockup-frame" id="mockup-frame">
+                            <!-- Device Header Bar -->
+                            <div class="mockup-header-bar">
+                                <div class="mockup-controls" aria-hidden="true">
+                                    <span class="mockup-dot mockup-dot-red"></span>
+                                    <span class="mockup-dot mockup-dot-yellow"></span>
+                                    <span class="mockup-dot mockup-dot-green"></span>
+                                </div>
+                                <div class="mockup-address-bar">
+                                    <svg class="mockup-lock-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                    <span class="mockup-url-text">rocol-portfolio.dev/v2</span>
+                                </div>
+                                <div class="mockup-status-badge">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span>Live Preview</span>
+                                </div>
+                            </div>
+
+                            <!-- Screen Screenshot Preview -->
+                            <div class="mockup-screen">
+                                <img src="assets/images/project-1.jpg" alt="Screenshot preview of Rogem's personal portfolio project displayed inside the product mockup device frame" width="700" height="420" class="mockup-screenshot" loading="eager">
+                                <div class="mockup-screen-footer">
+                                    <span class="mockup-chip-tag">Portfolio V2</span>
+                                    <span class="mockup-chip-meta">HTML5 &bull; CSS3 &bull; Vanilla JS</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Separate Blurred Ellipse Dynamic Shadow -->
+                        <div class="mockup-shadow" id="mockup-shadow" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ===================================================================
+             2. ABOUT SECTION (BIO, SKILLS, GOALS, TECH STACK & TIMELINE)
+             =================================================================== -->
+        <section id="about" class="section-block">
+            <div class="card reveal">
+                <span class="eyebrow">Background</span>
+                <h2>About Me</h2>
+
+                <p>
+                    I'm an Information Technology college student in the Philippines,
+                    currently taking <em>Web Systems and Technologies</em>.<br>
+                    What started as curiosity about how websites look and function has turned
+                    into a genuine passion for programming and software development.
+                </p>
+
+                <p>
+                    I enjoy the problem-solving aspect of coding—debugging tricky issues,
+                    understanding how browsers render content, and crafting tools that solve
+                    real everyday problems. My ultimate goal is to become a well-rounded
+                    full-stack developer who can design clean interfaces, write maintainable
+                    code, and architect reliable databases.
+                </p>
+            </div>
+
+            <!-- Focus Areas Grid -->
+            <div class="skills-grid" style="margin-top: 1.5rem;">
+                <div class="skill-category reveal">
+                    <h3>01. Frontend Fundamentals</h3>
+                    <ul class="clean-list">
+                        <li>Semantic HTML5 structure and web accessibility (a11y) standards</li>
+                        <li>CSS fundamentals, page layouts (Flexbox &amp; CSS Grid), and responsive design</li>
+                        <li>Modern JavaScript basics: DOM manipulation, event handling, and modern ES6+ syntax</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>02. Backend &amp; Databases</h3>
+                    <ul class="clean-list">
+                        <li>Understanding client-server architecture and RESTful API endpoints</li>
+                        <li>Relational database fundamentals and basic SQL queries (PostgreSQL / MySQL)</li>
+                        <li>Basic version control workflows with Git and GitHub</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Learning Roadmap -->
+            <div class="card reveal" style="margin-top: 1.5rem;">
+                <span class="eyebrow">Roadmap</span>
+                <h3>Learning Goals &amp; Milestones</h3>
+                <ol class="roadmap-list">
+                    <li>Master modern CSS layouts using Flexbox, CSS Grid, and responsive media queries</li>
+                    <li>Deepen JavaScript knowledge: DOM manipulation, event listeners, and asynchronous fetch APIs</li>
+                    <li>Build a responsive personal website with modern styling and dark mode</li>
+                    <li>Deploy full-stack web applications to live cloud hosting platforms (Vercel / Netlify / Render)</li>
+                </ol>
+            </div>
+
+            <!-- Developer Tech Stack -->
+            <div id="tech-stack" class="card reveal" style="margin-top: 1.5rem;">
+                <div class="ts-header">
+                    <span class="ts-header-label">[ TECH STACK ]</span>
+                    <span class="ts-header-right">Core Technologies &amp; Tools</span>
+                </div>
+
+                <div class="ts-category-row">
+                    <span class="ts-category-label">Frontend &amp; UI</span>
+                    <div class="ts-tag-list">
+                        <span class="ts-tag"><i class="devicon-html5-plain colored"></i> HTML5</span>
+                        <span class="ts-tag"><i class="devicon-css3-plain colored"></i> CSS3</span>
+                        <span class="ts-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                        <span class="ts-tag"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <div class="ts-category-row">
+                    <span class="ts-category-label">Backend &amp; APIs</span>
+                    <div class="ts-tag-list">
+                        <span class="ts-tag"><i class="devicon-php-plain colored"></i> PHP</span>
+                        <span class="ts-tag"><i class="devicon-laravel-plain colored"></i> Laravel</span>
+                        <span class="ts-tag"><i class="devicon-java-plain colored"></i> Java</span>
+                        <span class="ts-tag"><i class="devicon-cplusplus-plain colored"></i> C++</span>
+                    </div>
+                </div>
+
+                <div class="ts-category-row">
+                    <span class="ts-category-label">Databases</span>
+                    <div class="ts-tag-list">
+                        <span class="ts-tag"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                    </div>
+                </div>
+
+                <div class="ts-category-row">
+                    <span class="ts-category-label">Design &amp; Creative</span>
+                    <div class="ts-tag-list">
+                        <span class="ts-tag"><i class="devicon-figma-plain colored"></i> Figma</span>
+                        <span class="ts-tag"><i class="devicon-photoshop-plain colored"></i> Photoshop</span>
+                        <span class="ts-tag"><i class="devicon-canva-original colored"></i> Canva</span>
+                    </div>
+                </div>
+
+                <div class="ts-category-row">
+                    <span class="ts-category-label">Dev Tools</span>
+                    <div class="ts-tag-list">
+                        <span class="ts-tag"><i class="devicon-git-plain colored"></i> Git</span>
+                        <span class="ts-tag"><i class="devicon-github-original"></i> GitHub</span>
+                        <span class="ts-tag"><i class="devicon-vscode-plain colored"></i> VS Code</span>
+                    </div>
+                </div>
+
+                <div class="ts-category-row">
+                    <span class="ts-category-label">AI &amp; Productivity</span>
+                    <div class="ts-tag-list">
+                        <span class="ts-tag">ChatGPT</span>
+                        <span class="ts-tag">Gemini</span>
+                        <span class="ts-tag">Claude</span>
+                        <span class="ts-tag">DeepSeek</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education & Journey -->
+            <div style="margin-top: 1.5rem;">
+                <span class="eyebrow">Journey</span>
+                <h3>Education &amp; Experience</h3>
+
+                <div class="timeline-item card reveal">
+                    <h3>BS in Information Technology &middot; 2024&ndash;Present</h3>
+                    <p>
+                        Currently taking coursework including Web Systems and Technologies,
+                        Data Structures, and Database Management. Building hands-on course
+                        projects and strengthening software development fundamentals.
+                    </p>
+                </div>
+
+                <div class="timeline-item card reveal">
+                    <h3>Self-Directed Web Development &middot; 2024&ndash;Present</h3>
+                    <p>
+                        Practicing through documentation, building mini-projects, writing clean
+                        code, and exploring modern developer tools and workflows.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             SVG SCROLL-DRAW JOURNEY — between About and Projects
+             =================================================================== -->
+        <section id="journey-line" class="journey-line-section" aria-label="Skills journey timeline">
+            <div class="journey-line-inner">
+                <div class="journey-line-header reveal">
+                    <span class="eyebrow">The Journey</span>
+                    <h2 class="journey-line-title">Skills in Motion</h2>
+                    <p class="journey-line-subtitle">Scroll to trace the path from curiosity to craft.</p>
+                </div>
+
+                <!-- SVG container — nodes overlay on top in absolute positions -->
+                <div class="journey-svg-wrap" id="journey-svg-wrap">
+                    <svg
+                        id="journey-svg"
+                        class="journey-svg"
+                        viewBox="0 0 600 900"
+                        preserveAspectRatio="xMidYMid meet"
+                        aria-hidden="true"
+                        focusable="false"
+                        overflow="visible"
+                    >
+                        <!-- Faint full-length track (always visible, very low opacity) -->
+                        <path
+                            id="journey-track"
+                            class="journey-track"
+                            d="M 300 30
+                               C 480 30, 560 150, 480 250
+                               C 400 350, 120 370, 120 480
+                               C 120 590, 440 610, 440 720
+                               C 440 820, 300 870, 300 870"
+                            fill="none"
+                        />
+
+                        <!-- Accent drawing path -->
+                        <path
+                            id="journey-accent"
+                            class="journey-accent"
+                            d="M 300 30
+                               C 480 30, 560 150, 480 250
+                               C 400 350, 120 370, 120 480
+                               C 120 590, 440 610, 440 720
+                               C 440 820, 300 870, 300 870"
+                            fill="none"
+                        />
+
+                        <!-- Moving tip circle -->
+                        <circle id="journey-tip" class="journey-tip" cx="300" cy="30" r="5" />
+
+                        <!-- Node circles at fixed fractions (0.18, 0.40, 0.65, 0.88) -->
+                        <circle id="jn-0" class="journey-node" cx="480" cy="250" r="8" data-fraction="0.18" />
+                        <circle id="jn-1" class="journey-node" cx="120" cy="480" r="8" data-fraction="0.40" />
+                        <circle id="jn-2" class="journey-node" cx="440" cy="720" r="8" data-fraction="0.65" />
+                        <circle id="jn-3" class="journey-node" cx="300" cy="870" r="8" data-fraction="0.88" />
+                    </svg>
+
+                    <!-- Skill milestone labels — positioned beside each node -->
+                    <div class="journey-milestones" aria-label="Journey milestones">
+
+                        <div id="jm-0" class="journey-milestone journey-milestone--right" style="--jm-top: 25.5%">
+                            <div class="jm-connector" aria-hidden="true"></div>
+                            <div class="jm-content">
+                                <span class="jm-label">HTML &amp; CSS</span>
+                                <div class="jm-bar-track" role="progressbar" aria-label="HTML & CSS proficiency" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="jm-bar-fill" style="--jm-pct: 78%"></div>
+                                </div>
+                                <span class="jm-meta">Semantic structure &amp; responsive layouts</span>
+                            </div>
+                        </div>
+
+                        <div id="jm-1" class="journey-milestone journey-milestone--left" style="--jm-top: 50.5%">
+                            <div class="jm-content">
+                                <span class="jm-label">JavaScript</span>
+                                <div class="jm-bar-track" role="progressbar" aria-label="JavaScript proficiency" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="jm-bar-fill" style="--jm-pct: 60%"></div>
+                                </div>
+                                <span class="jm-meta">DOM, events, ES6+ &amp; async APIs</span>
+                            </div>
+                            <div class="jm-connector" aria-hidden="true"></div>
+                        </div>
+
+                        <div id="jm-2" class="journey-milestone journey-milestone--right" style="--jm-top: 75.5%">
+                            <div class="jm-connector" aria-hidden="true"></div>
+                            <div class="jm-content">
+                                <span class="jm-label">PHP &amp; MySQL</span>
+                                <div class="jm-bar-track" role="progressbar" aria-label="PHP & MySQL proficiency" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="jm-bar-fill" style="--jm-pct: 45%"></div>
+                                </div>
+                                <span class="jm-meta">Server-side logic &amp; database queries</span>
+                            </div>
+                        </div>
+
+                        <div id="jm-3" class="journey-milestone journey-milestone--left" style="--jm-top: 92%">
+                            <div class="jm-content">
+                                <span class="jm-label">Full-Stack Goal</span>
+                                <div class="jm-bar-track" role="progressbar" aria-label="Full-Stack Goal progress" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="jm-bar-fill" style="--jm-pct: 30%"></div>
+                                </div>
+                                <span class="jm-meta">Laravel, APIs &amp; cloud deployment</span>
+                            </div>
+                            <div class="jm-connector" aria-hidden="true"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ===================================================================
+             3. PROJECTS SECTION (OVERVIEW TABLE, SPOTLIGHT & DEMOS)
+             =================================================================== -->
+        <section id="projects" class="section-block">
+
+            <span class="eyebrow">Work &amp; Coursework</span>
+            <h2>Featured Projects</h2>
+            <p>
+                A collection of projects and coding labs I've built while studying
+                Information Technology. Each milestone represents hands-on experience
+                with new web standards, problem-solving, and building practical interfaces.
+            </p>
+
+            <!-- Projects Table -->
+            <div class="table-container reveal">
+                <table>
+                    <caption>Coursework and practice projects at a glance</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Project</th>
+                            <th scope="col">Tech Stack</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Link / Preview</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Personal Portfolio (Phase 1)</th>
+                            <td>Semantic HTML5</td>
+                            <td><span class="badge badge-complete">Complete</span></td>
+                            <td><a href="#home">View Top &uarr;</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Interactive Contact &amp; Inquiry Form</th>
+                            <td>HTML5 Forms &amp; Inputs</td>
+                            <td><span class="badge badge-complete">Complete</span></td>
+                            <td><a href="#contact">View Form &darr;</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Student Portal Profile Wireframe</th>
+                            <td>HTML5 Markup</td>
+                            <td><span class="badge badge-complete">Complete</span></td>
+                            <td><a href="#home">Archived</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" rowspan="2">Upcoming Phase 2 &amp; 3</th>
+                            <td>CSS3 Responsive Layout &amp; Theme Switcher</td>
+                            <td><span class="badge">In Progress</span></td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript Interactive Quiz &amp; Task Tracker</td>
+                            <td><span class="badge">Planned</span></td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <em>Note: New projects and live demos are added as we advance through our coursework modules.</em>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Spotlight Card -->
+            <figure class="card reveal">
+                <img src="assets/images/project-2.jpg" alt="Preview screenshot of the multi-page semantic HTML portfolio structure" width="900" height="480">
+                <figcaption>
+                    <strong>Personal Portfolio (Phase 1)</strong> &mdash; Built with pure semantic HTML5,
+                    focusing strictly on accessible structure, document hierarchy, and web standards compliance.
+                </figcaption>
+            </figure>
+
+            <div class="card reveal">
+                <h3>Key Steps in Developing This Milestone:</h3>
+                <ol class="roadmap-list">
+                    <li>Mapped out site architecture and page navigation requirements</li>
+                    <li>Structured semantic documents adhering to HTML5 standards</li>
+                    <li>Implemented advanced elements: definition lists, accessible tables, and forms</li>
+                    <li>Configured media elements with appropriate fallback content</li>
+                    <li>Validated code for semantic correctness, SEO metadata, and screen reader compatibility</li>
+                </ol>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ===================================================================
+             4. CONTACT SECTION (MESSAGE FORM, MEDIA SAMPLES & DETAILS)
+             =================================================================== -->
+        <section id="contact" class="section-block">
+            <span class="eyebrow">Communication</span>
+            <h2>Get In Touch</h2>
+            <p>
+                Have feedback on my portfolio, a question about my coursework,
+                or an internship opportunity to discuss? Please feel free to send a message
+                using the form below.
+            </p>
+
+            <div class="form-wrapper card reveal" data-reveal-repeat="true">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Juan Dela Cruz" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="you@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select a topic...</option>
+                            <option value="feedback">Portfolio Feedback</option>
+                            <option value="collaboration">Project Collaboration</option>
+                            <option value="opportunity">Internship / Opportunity</option>
+                            <option value="general">General Question</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="5" cols="45" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                        <label for="newsletter">Keep me updated on future project releases</label>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Media Samples -->
+            <div class="card reveal" style="margin-top: 1.5rem;">
+                <span class="eyebrow">Media Samples</span>
+                <h3>Audio Greeting &amp; Video Walkthrough</h3>
+
+                <div style="margin: 1rem 0;">
+                    <p><strong>Voice Greeting:</strong></p>
+                    <div class="media-card">
+                        <audio controls style="width: 100%;">
+                            <source src="assets/audio/intro.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <p><strong>Demo Walkthrough:</strong></p>
+                    <div class="media-card">
+                        <video controls width="100%" style="border-radius: var(--radius-md);">
+                            <source src="assets/video/demo.mp4" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Contact Info -->
+            <div class="card reveal" style="margin-top: 1.5rem;">
+                <span class="eyebrow">Connect</span>
+                <h3>Other Ways to Reach Me</h3>
+                <ul class="clean-list">
+                    <li><strong>Email:</strong> <a href="mailto:rogemcollado.dev@gmail.com">rogemcollado.dev@gmail.com</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/rogemcollado" target="_blank" rel="noopener">github.com/rogemcollado</a></li>
+                    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/rogemcollado" target="_blank" rel="noopener">linkedin.com/in/rogemcollado</a></li>
+                    <li><strong>Location:</strong> Philippines</li>
+                </ul>
+            </div>
+        </section>
+
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; 2026 Rogem Collado &middot; Minimalist Black &amp; White Edition</p>
+            <p><a href="#home">Back to Top &uarr;</a></p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js?v=9"></script>
+    <script src="assets/js/ai-chat.js"></script>
+</body>
+
+</html>
